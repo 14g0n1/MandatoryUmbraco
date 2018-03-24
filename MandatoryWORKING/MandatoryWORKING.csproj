@@ -307,6 +307,17 @@
     <Content Include="Views\Partials\ContactPagePartial.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\AboutUs.cshtml" />
+    <Content Include="Views\ArticleItem.cshtml" />
+    <Content Include="Views\ArticlesOverview.cshtml" />
+    <Content Include="Views\Contact.cshtml" />
+    <Content Include="Views\HomePage.cshtml" />
+    <Content Include="Views\Login.cshtml" />
+    <Content Include="Views\Master.cshtml" />
+    <Content Include="Views\ProjectItem.cshtml" />
+    <Content Include="Views\ProjectsOverview.cshtml" />
+    <Content Include="Views\SiteMap.cshtml" />
+    <Content Include="Views\TextPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
