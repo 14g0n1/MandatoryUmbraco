@@ -2,8 +2,25 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
-    var selection = Model.Content.Site().Children.FirstOrDefault(x => x.IsVisible() && x.DocumentTypeAlias == "projectsOverview").Children.OrderByDescending(s => s.CreateDate);
-}
+    var selection = Model.Content.Site().Children.FirstOrDefault(x => x.IsVisible() && x.DocumentTypeAlias == "projectsOverview").Children.Where(c => c.IsVisible());
+    var memberService = ApplicationContext.Current.Services.MemberService;
+
+    /*
+     Test if the currentUser is a member of the guest group if he is; only projects with a status that is not 'Idea' will be shown
+     If the user identity is not set only 'completed' will be set
+     If the user is logged in and is not a part of the guest user group we assume he is part of Active group which allows him to se all projects
+     */
+    if (Members.GetCurrentLoginStatus().IsLoggedIn) {
+
+        if ((memberService.GetMembersByGroup("Guests").FirstOrDefault(m => m.Name == Members.GetCurrentMember().Name)) != null) {
+            selection = selection.Where(c => umbraco.library.GetPreValueAsString(c.GetPropertyValue<int>("projectStatus")) != "Idea");
+        }
+    }
+    else
+    {
+        selection = selection.Where(c => umbraco.library.GetPreValueAsString(c.GetPropertyValue<int>("projectStatus")) == "Completed");
+    }
+  }
 
 @if (selection.Count() > 0)
 {

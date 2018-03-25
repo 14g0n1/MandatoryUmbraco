@@ -2,54 +2,76 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
-}
 
-@{
     var memberService = ApplicationContext.Current.Services.MemberService;
     var activeMembers = memberService.GetMembersByGroup("Active members");
     var guestMembers = memberService.GetMembersByGroup("Guests");
 }
 
-<h3>Active members: </h3>
 @if (activeMembers.Count() > 0)
 {
-    foreach (var member in activeMembers)
-    {
-    <p>
-        Name: @member.Name<br>
-        Address: @member.GetValue("address")<br>
-        Zip: @member.GetValue("zip")
-        City: @member.GetValue("city")) <br>
-        Email: @member.Email<br>
-        Skills:
+    <div class="card my-4">
+        <h4 class="card-header">Active members: </h4>
+        <div class="card-body">
+            <div class="row text-center">
+                @foreach (var member in activeMembers)
+                {
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card">
+                            <img class="card-img-top" src="@Umbraco.TypedMember(member.Id).GetCropUrl("Photo", "MainImage")" alt="MainImg">
+                            <div class="card-body">
+                                <p>
+                                    <b><i>Name:</i></b> @member.Name<br>
+                                    <b><i>Address:</i></b> @member.GetValue("address")<br>
+                                    <b><i>Zip:</i></b> @member.GetValue("zip")<br />
+                                    <b><i>City:</i></b> @member.GetValue("city") <br>
+                                    <b><i>Email:</i></b> @member.Email<br>
+                                    <b><i>Skills:</i></b>
 
-        @if (member.GetValue("skills") != null)
-        {
-            string[] skills = member.GetValue("skills").ToString().Split(',');
-            string skillString = string.Join(", ", from skill in skills select umbraco.library.GetPreValueAsString(Convert.ToInt32(skill)));
-        <span> @skillString </span>
-        }
-    </p>
-    }
+                                    @if (member.GetValue("skills") != null)
+                                    {
+                                        string[] skills = member.GetValue("skills").ToString().Split(',');
+                                        string skillString = string.Join(", ", from skill in skills select umbraco.library.GetPreValueAsString(Convert.ToInt32(skill)));
+                                        <span> @skillString </span>
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 }
 else
 {
     <p><i>No active members registered</i></p>
 }
 
-
-
-<h3>Guest members: </h3>
 @if (guestMembers.Count() > 0)
 {
-    foreach (var member in guestMembers)
-    {
-    <p>
-        Name: @member.Name<br>
-        Mobile: @member.GetValue("Mobile")<br>
-
-    </p>
-    }
-}else{
+    <div class="card my-4">
+        <h4 class="card-header">Guest members: </h4>
+        <div class="card-body">
+            <div class="row text-center">
+                @foreach (var member in guestMembers)
+                {
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>
+                                    <b><i>Name:</i></b> @member.Name<br>
+                                    <b><i>Mobile:</i></b> @member.GetValue("mobile")<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+else
+{
 <p><i>No guest members registered</i></p>
 }

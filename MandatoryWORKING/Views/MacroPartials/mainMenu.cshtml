@@ -25,11 +25,20 @@
         <ul class="navbar-nav mr-auto">
             <li>
                 <img class="headerLogo inlin" src="@Umbraco.TypedMedia(Model.Content.Site().GetPropertyValue<int>("logo")).Url" alt="" /></li>
-    <li class="nav-item">
-
-       
-        <a class="nav-link" href="@Model.Content.Site().Url">@Model.Content.Site().Name</a>
-    </li>
+   
+            
+            @if (Model.Content.Site().Name == CurrentPage.Name)
+            {
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Model.Content.Site().Url">@Model.Content.Site().Name</a>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a class="nav-link" href="@Model.Content.Site().Url">@Model.Content.Site().Name</a>
+                </li>
+            }
     @foreach (var item in selection)
     {
         <!--Check if the element is protected from this role-->
@@ -41,9 +50,18 @@
         {
             if (item.Name.ToLower() != "projects")
             {
-                <li class="nav-item">
-                    <a class="nav-link" href="@item.Url">@item.Name</a>
-                </li>
+                if (item.Name == CurrentPage.Name)
+                {
+                    <li class="nav-item active">
+                        <a class="nav-link" href="@item.Url">@item.Name</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@item.Url">@item.Name</a>
+                    </li>
+                }
             }
             else
             {

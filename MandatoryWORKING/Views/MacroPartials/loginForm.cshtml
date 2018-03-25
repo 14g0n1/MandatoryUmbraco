@@ -21,22 +21,27 @@
 @if (!Umbraco.MemberIsLoggedOn()) {
 using (Html.BeginUmbracoForm<UmbLoginController>("HandleLogin"))
 {
-    <fieldset>
+    <fieldset class="row align-items-centerjustify-content-xl-center" >
         <legend>Login</legend>
-        
-        @Html.ValidationSummary("loginModel", true)
 
         @Html.LabelFor(m => loginModel.Username)
-        @Html.TextBoxFor(m => loginModel.Username)
-        @Html.ValidationMessageFor(m => loginModel.Username)
+        @Html.TextBoxFor(m => loginModel.Username, new { @Class = "form-control-sm" })
+        <div class="text-danger">
+            @Html.ValidationMessageFor(m => loginModel.Username)
+        </div>
         <br />
 
         @Html.LabelFor(m => loginModel.Password)
-        @Html.PasswordFor(m => loginModel.Password)
-        @Html.ValidationMessageFor(m => loginModel.Password)
+        @Html.PasswordFor(m => loginModel.Password, new { @Class="form-control-sm"})
+        <div class="text-danger">
+            @Html.ValidationMessageFor(m => loginModel.Password)
+        </div>
         <br />
+        <div class="text-danger">
 
-        <button>Login</button>
+            @Html.ValidationSummary("loginModel", true)</div>
+
+        <input type="Submit" class="my-2 btn btn-primary mb-2" value="Login"/>
     </fieldset>
     }
 }
@@ -51,7 +56,7 @@ else
             @using (Html.BeginUmbracoForm<UmbLoginStatusController>("HandleLogout"))
             {
                 logoutModel.RedirectUrl= "/";
-            <button>Logout</button>
+            <button class="my-2 btn btn-primary mb-2" >Logout</button>
             @Html.HiddenFor(m => logoutModel.RedirectUrl)
            }
         </fieldset>
