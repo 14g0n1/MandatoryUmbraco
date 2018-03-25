@@ -1,5 +1,15 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ArticlesOverview>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+    var selection = Model.Content.Site().Children.FirstOrDefault(x => x.IsVisible() && x.DocumentTypeAlias == "articlesOverview").Children;
+}
+
+
+
+@foreach(var article in selection) { 
+    <div class="jumbotron my-4">
+        <h1 class="display-3">@article.GetPropertyValue("articleTitle")</h1>
+        <p class="lead">@article.GetPropertyValue("articleContent")</p>
+    </div>
 }

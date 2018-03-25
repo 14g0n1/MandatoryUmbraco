@@ -4,11 +4,9 @@
 	Layout = "Master.cshtml";
 }
 
-<div class="container">
-    <header class="jumbotron my-4">
+    <div class="jumbotron my-4">
         <h1 class="display-3">@Umbraco.Field("siteTitle")</h1>
         <p class="lead">@Umbraco.Field("mainContent")</p>
-    </header>
+    </div>
     <!-- Render 3 newest completed projects -->
     @Umbraco.RenderMacro("listNewestProjects", new { numOfProjects = "3" })
-</div>

@@ -19,14 +19,14 @@
 <body>
     @Umbraco.RenderMacro("mainMenu")
     <div class="wrapper">
-        @RenderBody()
-    </div>
-    <!-- Footer -->
-    <footer class="py-5 bg-light" style="margin-top:2em;">
         <div class="container">
-            <p class="m-0 text-center">@Umbraco.Field("footer")</p>
+            @RenderBody()
         </div>
-    </footer>
+        </div>
+    <!-- Footer -->
+    <div class="bg-light footer">
+            <p class="m-0 text-center">@Model.Content.Site().GetPropertyValue("footer")</p>
+    </div>
 </body>
 
 </html>
