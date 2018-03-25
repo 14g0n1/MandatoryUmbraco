@@ -12,7 +12,8 @@
      */
     if (Members.GetCurrentLoginStatus().IsLoggedIn) {
 
-        if ((memberService.GetMembersByGroup("Guests").FirstOrDefault(m => m.Name == Members.GetCurrentMember().Name)) != null) {
+        if ((memberService.GetMembersByGroup("Guests").FirstOrDefault(m => m.Name == Members.GetCurrentMember().Name)) != null
+            && (memberService.GetMembersByGroup("Active members").FirstOrDefault(m => m.Name == Members.GetCurrentMember().Name)) == null) {
             selection = selection.Where(c => umbraco.library.GetPreValueAsString(c.GetPropertyValue<int>("projectStatus")) != "Idea");
         }
     }

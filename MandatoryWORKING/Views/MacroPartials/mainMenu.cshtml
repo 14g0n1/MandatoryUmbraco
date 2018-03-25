@@ -87,11 +87,12 @@
                                if (Members.GetCurrentLoginStatus().IsLoggedIn)
                                {
 
-                                   if ((memberService.GetMembersByGroup("Guests").FirstOrDefault(m => m.Name == Members.GetCurrentMember().Name)) != null)
-                                   {
-                                       childResults = item.Children.Where(c => umbraco.library
-                                       .GetPreValueAsString(c.GetPropertyValue<int>("projectStatus")) != "Idea");
-                                   }
+                                   if ((memberService.GetMembersByGroup("Guests").FirstOrDefault(m => m.Name == Members.GetCurrentMember().Name)) != null
+                                        && (memberService.GetMembersByGroup("Active Members").FirstOrDefault(m => m.Name == Members.GetCurrentMember().Name)) == null)
+                                       {
+                                           childResults = item.Children.Where(c => umbraco.library
+                                           .GetPreValueAsString(c.GetPropertyValue<int>("projectStatus")) != "Idea");
+                                       }
                                }
                                else
                                {

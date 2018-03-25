@@ -1214,3 +1214,4 @@ Instead, wrap the contents of the block in "{}":
  2018-03-25 16:52:34,034 [P9700/D2/T63] INFO  Umbraco.Web.Mvc.UmbracoPageResult - Finished (took 41ms)
  2018-03-25 16:52:44,135 [P9700/D2/T56] INFO  Umbraco.Core.Security.UmbracoMembershipProviderBase - Login attempt succeeded for username morty from IP address ::1
  2018-03-25 18:06:23,064 [P9700/D2/T21] INFO  Umbraco.Core.Security.UmbracoMembershipProviderBase - Login attempt succeeded for username morty from IP address ::1
+ 2018-03-25 18:32:37,755 [P9700/D2/T37] INFO  Umbraco.Core.Security.UmbracoMembershipProviderBase - Login attempt succeeded for username guest from IP address ::1
