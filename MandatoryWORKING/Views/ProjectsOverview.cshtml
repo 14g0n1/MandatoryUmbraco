@@ -1,5 +1,30 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ProjectsOverview>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+    var selection = Model.Content.Site().Children.FirstOrDefault(x => x.IsVisible() && x.DocumentTypeAlias == "projectsOverview").Children.OrderByDescending(s => s.CreateDate);
+}
+
+@if (selection.Count() > 0)
+{
+    <div class="card my-4">
+        <div class="card-body">
+            <div class="row text-center">
+                @foreach (var item in selection)
+                {
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card">
+                            <h4 class="card-header">@item.Name</h4>
+                            <div class="card-body">
+                                Created: @item.CreateDate.ToString("dd MMM yyyy HH:MM")
+                            </div>
+                            <div class="card-footer">
+                                <a href="@item.Url" class="btn btn-primary">View details</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 }

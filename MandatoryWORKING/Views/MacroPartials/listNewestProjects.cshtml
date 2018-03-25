@@ -37,7 +37,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">@item.Name</h4>
-                                Created: @item.CreateDate
+                                @item.CreateDate.ToString("dd MMM yyyy HH:MM")
                             </div>
                             <div class="card-footer">
                                 <a href="@item.Url" class="btn btn-primary">View details</a>

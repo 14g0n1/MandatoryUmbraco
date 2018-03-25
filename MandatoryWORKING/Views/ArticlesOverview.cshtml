@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
-    var selection = Model.Content.Site().Children.FirstOrDefault(x => x.IsVisible() && x.DocumentTypeAlias == "articlesOverview").Children;
+    var selection = CurrentPage.Children;
 }
 
 
@@ -13,3 +13,5 @@
         <p class="lead">@article.GetPropertyValue("articleContent")</p>
     </div>
 }
+
+

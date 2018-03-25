@@ -53,6 +53,11 @@
                             @item.Name
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <li class="dropdown-item">
+                                <a href="@item.Url">
+                                    All projects
+                                </a>
+                            </li>
                             @foreach (var child in item.Children.Where(c => c.IsVisible()
                     && umbraco.library.GetPreValueAsString(c.GetPropertyValue<int>("projectStatus")) == "Completed"))
                             {

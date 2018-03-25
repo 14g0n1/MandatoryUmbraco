@@ -3,38 +3,55 @@
 
 @if (TempData["success"] == null)
 {
+
     using (Html.BeginUmbracoForm("SubmitForm", "ContactPageSurface", new object { }, new { @class = "form-horizontal" }))
     {
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Name)
-    </div><div class="editor-field">
-                      @Html.TextBoxFor(model => model.Name)
-                      @Html.ValidationMessageFor(model => model.Name)
-    </div>
+        <div class="form-group-row my-3">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div><div class="editor-field">
+                @Html.TextBoxFor(model => model.Name, new { @Class = "form-control" })
+                      <div class="text-danger">
+                          @Html.ValidationMessageFor(model => model.Name)
+                      </div>
+            </div>
+        </div>
+        <div class="form-group-row my-3">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div><div class="editor-field">
+                @Html.TextBoxFor(model => model.Email, new { @Class = "form-control" })
+                <div class="text-danger">
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+            </div>
+            </div>
 
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Email)
-    </div><div class="editor-field">
-        @Html.TextBoxFor(model => model.Email)
-        @Html.ValidationMessageFor(model => model.Email)
-    </div>
+            <div class="form-group-row my-3">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Subject)
+                </div><div class="editor-field">
+                    @Html.TextBoxFor(model => model.Subject, new { @Class = "form-control" })
+                    <div class="text-danger">
+                        @Html.ValidationMessageFor(model => model.Subject)
+                    </div>
+                </div>
+                </div>
 
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Subject)
-    </div><div class="editor-field">
-                      @Html.TextBoxFor(model => model.Subject)
-                      @Html.ValidationMessageFor(model => model.Subject)
-    </div>
-
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Name)
-    </div><div class="editor-field">
-                      @Html.TextAreaFor(model => model.Message)
-                      @Html.ValidationMessageFor(model => model.Message)
-    </div>
-    <input type="Submit" />
-
-    }
-} else {
-    <p> Thank you for contacting us. We’ll be in touch soon!</p>
-      }
+                <div class="form-group-row my-3">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Message)
+                    </div><div class="editor-field">
+                        @Html.TextAreaFor(model => model.Message, new { @Class = "form-control", @Rows = "5" })
+                        <div class="text-danger">
+                            @Html.ValidationMessageFor(model => model.Message)
+                        </div>
+                    </div>
+                    </div>
+                    <input type="Submit" class="my-2 btn btn-primary mb-2 float-right" />
+                    }
+                    }
+                    else
+                    {
+                    <p class="my-lg-4"> Thank you for contacting us. We’ll be in touch soon!</p>
+                    }

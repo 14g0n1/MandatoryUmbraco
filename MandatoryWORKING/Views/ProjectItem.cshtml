@@ -3,3 +3,18 @@
 @{
 	Layout = "Master.cshtml";
 }
+
+<div class="card my-4">
+    <div class="card-header">
+        @Umbraco.Field("projectTitle")
+    </div>
+    <div class="card-body">
+        <div class="row">
+            @Umbraco.Field("projectDescription")
+        </div>
+    </div>
+    <div class="card-footer">
+        <b><i>Status: </i></b><i>'@umbraco.library.GetPreValueAsString(CurrentPage.GetPropertyValue<int>("projectStatus"))'</i><br />
+        <b><i>Created: </i></b><i>@CurrentPage.CreateDate.ToString("dd MMM yyyy HH:MM")</i>
+    </div>
+    </div>
