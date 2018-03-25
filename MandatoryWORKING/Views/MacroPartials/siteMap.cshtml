@@ -25,10 +25,10 @@
     const int maxLevelForSitemap = 4;
 
     @* Select visible children *@
-    var selection = node.Children.Where(x => x.IsVisible() && x.Level <= maxLevelForSitemap && x.Name.ToLower() != "site map").ToArray();
+    var selection = node.Children.Where(x => x.IsVisible() && x.Level <= maxLevelForSitemap && x.Name.ToLower() != "site map");
 
     @* If any items are returned, render a list *@
-    if (selection.Length > 0)
+    if (selection.Count() > 0)
     {
         <ul>
             @foreach (var item in selection)

@@ -76,15 +76,37 @@
                                     All projects
                                 </a>
                             </li>
-                            @foreach (var child in item.Children.Where(c => c.IsVisible()
-                    && umbraco.library.GetPreValueAsString(c.GetPropertyValue<int>("projectStatus")) == "Completed"))
-                            {
-                                <li class="dropdown-item">
-                                    <a href="@child.Url">
-                                        @child.Name
-                                    </a>
-                                </li>
-                            }
+                           @{ 
+                               var memberService = ApplicationContext.Current.Services.MemberService;
+                               var childResults = item.Children;
+                               /*
+                              Test if the currentUser is a member of the guest group if he is; only projects with a status that is not 'Idea' will be shown
+                              If the user identity is not set only 'completed' will be set
+                              If the user is logged in and is not a part of the guest user group we assume he is part of Active group which allows him to se all projects
+                              */
+                               if (Members.GetCurrentLoginStatus().IsLoggedIn)
+                               {
+
+                                   if ((memberService.GetMembersByGroup("Guests").FirstOrDefault(m => m.Name == Members.GetCurrentMember().Name)) != null)
+                                   {
+                                       childResults = item.Children.Where(c => umbraco.library
+                                       .GetPreValueAsString(c.GetPropertyValue<int>("projectStatus")) != "Idea");
+                                   }
+                               }
+                               else
+                               {
+                                   childResults = item.Children.Where(c => umbraco.library
+                                   .GetPreValueAsString(c.GetPropertyValue<int>("projectStatus")) == "Completed");
+                               }
+                           }
+                                    @foreach (var child in childResults)
+                                    {
+                                        <li class="dropdown-item">
+                                            <a href="@child.Url">
+                                                @child.Name
+                                            </a>
+                                        </li>
+                                    }
                         </ul>
                     </div>
                 </li>

@@ -1149,3 +1149,68 @@ Instead, wrap the contents of the block in "{}":
  2018-03-25 15:13:17,610 [P5072/D2/T10] INFO  Umbraco.Web.Mvc.UmbracoPageResult - Executing Umbraco RouteDefinition controller
  2018-03-25 15:13:17,650 [P5072/D2/T10] INFO  Umbraco.Web.Mvc.UmbracoPageResult - Finished (took 39ms)
  2018-03-25 15:13:25,244 [P5072/D2/T20] INFO  Umbraco.Core.Security.UmbracoMembershipProviderBase - Login attempt succeeded for username morty from IP address ::1
+ 2018-03-25 15:20:33,972 [P9700/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.9.2 application starting on DESKTOP-5V73BJB
+ 2018-03-25 15:20:34,000 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2018-03-25 15:20:34,016 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 15ms)
+ 2018-03-25 15:20:34,077 [P9700/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2018-03-25 15:20:34,081 [P9700/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2018-03-25 15:20:34,083 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-03-25 15:20:34,426 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 342ms)
+ 2018-03-25 15:20:34,427 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2018-03-25 15:20:34,430 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 2ms)
+ 2018-03-25 15:20:34,522 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-03-25 15:20:34,523 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-03-25 15:20:34,525 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2018-03-25 15:20:34,525 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 0ms)
+ 2018-03-25 15:20:34,527 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-03-25 15:20:34,527 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-03-25 15:20:34,527 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2018-03-25 15:20:34,529 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 1ms)
+ 2018-03-25 15:20:34,546 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-03-25 15:20:34,547 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 1ms)
+ 2018-03-25 15:20:34,548 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2018-03-25 15:20:34,550 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 1ms)
+ 2018-03-25 15:20:34,551 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-03-25 15:20:34,553 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 2ms)
+ 2018-03-25 15:20:34,553 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2018-03-25 15:20:34,554 [P9700/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 1ms)
+ 2018-03-25 15:20:36,534 [P9700/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2018-03-25 15:20:37,046 [P9700/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2018-03-25 15:20:37,282 [P9700/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2018-03-25 15:20:37,416 [P9700/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2018-03-25 15:20:37,477 [P9700/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 3673ms)
+ 2018-03-25 15:20:37,483 [P9700/D2/T1] INFO  Umbraco.Web.ExamineStartup - Forcing index InternalIndexSet to be unlocked since it was left in a locked state
+ 2018-03-25 15:20:37,485 [P9700/D2/T1] INFO  Umbraco.Web.ExamineStartup - Forcing index ExternalIndexSet to be unlocked since it was left in a locked state
+ 2018-03-25 15:20:39,839 [P9700/D2/T8] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:56931/umbraco
+ 2018-03-25 15:20:39,841 [P9700/D2/T8] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:56931/umbraco (UmbracoModule request)
+ 2018-03-25 15:20:40,587 [P9700/D2/T8] INFO  umbraco.content - Load Xml from file...
+ 2018-03-25 15:20:40,596 [P9700/D2/T8] INFO  umbraco.content - Loaded Xml from file.
+ 2018-03-25 15:20:41,593 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-03-25 15:20:41,595 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 2ms)
+ 2018-03-25 15:20:41,595 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2018-03-25 15:20:41,596 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 1ms)
+ 2018-03-25 15:20:42,528 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-03-25 15:20:42,528 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-03-25 15:20:42,528 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2018-03-25 15:20:42,529 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper (took 0ms)
+ 2018-03-25 15:20:42,693 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-03-25 15:20:42,694 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-03-25 15:20:42,694 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2018-03-25 15:20:42,694 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 0ms)
+ 2018-03-25 15:20:42,716 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-03-25 15:20:42,716 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-03-25 15:20:42,716 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolving umbraco.cms.businesslogic.macro.IMacroEngine
+ 2018-03-25 15:20:42,717 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolved umbraco.cms.businesslogic.macro.IMacroEngine (took 0ms)
+ 2018-03-25 15:20:42,830 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-03-25 15:20:42,830 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2018-03-25 15:20:42,830 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.Deploy.IServiceConnector
+ 2018-03-25 15:20:42,831 [P9700/D2/T8] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.Deploy.IServiceConnector (took 0ms)
+ 2018-03-25 15:21:40,673 [P9700/D2/T12] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2018-03-24 15:21:40
+ 2018-03-25 16:52:28,272 [P9700/D2/T53] INFO  Umbraco.Core.Security.UmbracoMembershipProviderBase - Login attempt failed for username active from IP address ::1, the user does not exist
+ 2018-03-25 16:52:28,278 [P9700/D2/T53] INFO  Umbraco.Web.Mvc.UmbracoPageResult - Executing Umbraco RouteDefinition controller
+ 2018-03-25 16:52:28,345 [P9700/D2/T53] INFO  Umbraco.Web.Mvc.UmbracoPageResult - Finished (took 67ms)
+ 2018-03-25 16:52:33,992 [P9700/D2/T63] INFO  Umbraco.Core.Security.UmbracoMembershipProviderBase - Login attempt failed for username active from IP address ::1, the user does not exist
+ 2018-03-25 16:52:33,992 [P9700/D2/T63] INFO  Umbraco.Web.Mvc.UmbracoPageResult - Executing Umbraco RouteDefinition controller
+ 2018-03-25 16:52:34,034 [P9700/D2/T63] INFO  Umbraco.Web.Mvc.UmbracoPageResult - Finished (took 41ms)
+ 2018-03-25 16:52:44,135 [P9700/D2/T56] INFO  Umbraco.Core.Security.UmbracoMembershipProviderBase - Login attempt succeeded for username morty from IP address ::1
+ 2018-03-25 18:06:23,064 [P9700/D2/T21] INFO  Umbraco.Core.Security.UmbracoMembershipProviderBase - Login attempt succeeded for username morty from IP address ::1
