@@ -4,5 +4,11 @@
 	Layout = "Master.cshtml";
 }
 
-<!--Only fetch top 3 newest reports-->
+<div class="container">
+    <header class="jumbotron my-4">
+        <h1 class="display-3">@Umbraco.Field("siteTitle")</h1>
+        <p class="lead">@Umbraco.Field("mainContent")</p>
+    </header>
+    <!-- Render 3 newest completed projects -->
     @Umbraco.RenderMacro("listNewestProjects", new { numOfProjects = "3" })
+</div>

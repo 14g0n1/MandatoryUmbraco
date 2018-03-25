@@ -11,7 +11,7 @@
     - It then generates links so the visitor can go to each page
 *@
 
-@{ 
+@{
     //used classic link expressions instead of umbraco
 
     var numOfProjects = Convert.ToUInt16(Model.MacroParameters["numOfProjects"]);
@@ -24,13 +24,28 @@
                .OrderByDescending(c => c.CreateDate)
                .Take(numOfProjects); }
 
-    @if(selection.Count() > 0)
-{
-    <ul>
-        @foreach (var item in selection)
-        {
-          
-            <li><a href="@item.Url">@item.Name</a> created: @item.CreateDate</li>
-        }
-    </ul>
+@if (selection.Count() > 0)
+{<div class="card">
+        <div class="card-header">Newest 'completed' projects</div>
+    <div class="card-body">
+            <div class="row text-center">
+                @foreach (var item in selection)
+                {
+
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">@item.Name</h4>
+                                Created: @item.CreateDate
+                            </div>
+                            <div class="card-footer">
+                                <a href="@item.Url" class="btn btn-primary">View details</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 }

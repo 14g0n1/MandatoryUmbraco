@@ -285,6 +285,7 @@
       <DependentUpon>bootstrap.css</DependentUpon>
     </Content>
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Content\customStyling\CustomOverallStyles.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -318,6 +319,11 @@
     <Content Include="Views\ProjectsOverview.cshtml" />
     <Content Include="Views\SiteMap.cshtml" />
     <Content Include="Views\TextPage.cshtml" />
+    <Content Include="Views\MacroPartials\listNewestProjects.cshtml" />
+    <Content Include="Views\MacroPartials\loginForm.cshtml" />
+    <Content Include="Views\MacroPartials\mainMenu.cshtml" />
+    <Content Include="Views\MacroPartials\siteMap.cshtml" />
+    <Content Include="Views\Members.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -507,9 +513,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\MacroPartials\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

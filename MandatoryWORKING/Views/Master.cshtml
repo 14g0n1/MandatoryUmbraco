@@ -11,7 +11,8 @@
     <meta charset="UTF-8">
     <meta name="Description" content="@Umbraco.Field("metaDescription")">
     <meta name="Keywords" content="@Umbraco.Field("metaKeywords")">
-
+    <link rel="stylesheet" href="~/Content/customStyling/CustomOverallStyles.css">
+    <link rel="icon" class="headerLogo" href="@Umbraco.TypedMedia(Model.Content.Site().GetPropertyValue<int>("logo")).Url">
     <title>@Umbraco.Field("siteTitle")</title>
 
 </head>
@@ -20,5 +21,12 @@
     <div class="wrapper">
         @RenderBody()
     </div>
+    <!-- Footer -->
+    <footer class="py-5 bg-light" style="margin-top:2em;">
+        <div class="container">
+            <p class="m-0 text-center">@Umbraco.Field("footer")</p>
+        </div>
+    </footer>
 </body>
+
 </html>

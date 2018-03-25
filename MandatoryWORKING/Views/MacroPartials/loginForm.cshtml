@@ -18,8 +18,8 @@
 }
 
 
-
-@using (Html.BeginUmbracoForm<UmbLoginController>("HandleLogin"))
+@if (!Umbraco.MemberIsLoggedOn()) {
+using (Html.BeginUmbracoForm<UmbLoginController>("HandleLogin"))
 {
     <fieldset>
         <legend>Login</legend>
@@ -37,5 +37,23 @@
         <br />
 
         <button>Login</button>
-    </fieldset>  
+    </fieldset>
+    }
+}
+else
+{
+    using (Html.BeginUmbracoForm<UmbLoginController>("HandleLogout"))
+    {
+        var logoutModel = new PostRedirectModel();
+
+        <fieldset>
+            <legend>You are currently logged in as @Members.GetCurrentLoginStatus().Name</legend>
+            @using (Html.BeginUmbracoForm<UmbLoginStatusController>("HandleLogout"))
+            {
+                logoutModel.RedirectUrl= "/";
+            <button>Logout</button>
+            @Html.HiddenFor(m => logoutModel.RedirectUrl)
+           }
+        </fieldset>
+    }
 }
