@@ -54,3 +54,7 @@
  2018-03-26 08:32:57,931 [P19144/D2/T6] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.Deploy.IServiceConnector
  2018-03-26 08:32:57,936 [P19144/D2/T6] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.Deploy.IServiceConnector (took 4ms)
  2018-03-26 08:33:32,773 [P19144/D2/T11] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2018-03-25 08:33:32
+ 2018-03-26 08:34:32,342 [P19144/D2/T7] INFO  Umbraco.Core.Security.UmbracoMembershipProviderBase - Login attempt failed for username morty from IP address ::1
+ 2018-03-26 08:34:32,478 [P19144/D2/T7] INFO  Umbraco.Web.Mvc.UmbracoPageResult - Executing Umbraco RouteDefinition controller
+ 2018-03-26 08:34:32,590 [P19144/D2/T7] INFO  Umbraco.Web.Mvc.UmbracoPageResult - Finished (took 111ms)
+ 2018-03-26 08:34:37,536 [P19144/D2/T6] INFO  Umbraco.Core.Security.UmbracoMembershipProviderBase - Login attempt succeeded for username morty from IP address ::1
