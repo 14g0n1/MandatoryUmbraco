@@ -39,7 +39,7 @@
                     <a class="nav-link" href="@Model.Content.Site().Url">@Model.Content.Site().Name</a>
                 </li>
             }
-    @foreach (var item in selection.OrderByDescending(s => s.CreateDate))
+    @foreach (var item in selection)
     {
         <!--Check if the element is protected from this role-->
         var isProtected = umbraco.library.IsProtected(item.Id, item.Path);
@@ -100,7 +100,7 @@
                                    .GetPreValueAsString(c.GetPropertyValue<int>("projectStatus")) == "Completed");
                                }
                            }
-                                    @foreach (var child in childResults)
+                                    @foreach (var child in childResults.OrderByDescending(s => s.CreateDate))
                                     {
                                         <li class="dropdown-item">
                                             <a href="@child.Url">
