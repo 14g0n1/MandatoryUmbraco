@@ -39,7 +39,7 @@
                     <a class="nav-link" href="@Model.Content.Site().Url">@Model.Content.Site().Name</a>
                 </li>
             }
-    @foreach (var item in selection)
+    @foreach (var item in selection.OrderByDescending(s => s.CreateDate))
     {
         <!--Check if the element is protected from this role-->
         var isProtected = umbraco.library.IsProtected(item.Id, item.Path);

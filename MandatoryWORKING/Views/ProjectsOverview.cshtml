@@ -28,7 +28,8 @@
     <div class="card my-4">
         <div class="card-body">
             <div class="row text-center">
-                @foreach (var item in selection)
+                <!--Loop through selection that is ordered by createdate desc-->
+                @foreach (var item in selection.OrderByDescending(s => s.CreateDate))
                 {
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="card">
